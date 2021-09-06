@@ -4,7 +4,7 @@ vowels = []
 consonants = []
 consonants_score = []
 some_list = []
-
+another_list = []
 #tim ra tap hop nguyen am va phu am
 for i in list_s:
     if i == "A" or i == "I" or i == "E" or i == "O" or i == "U":
@@ -24,19 +24,14 @@ for w in list_s:
 some_list=list(dict.fromkeys(some_list))
 
 # tao ra cac tu tu phu am va so sanh de tim diem
-for w in list_s:
-    for c in consonants:
-        if w == c:
-            for i in range(1,len(list_s)+1):
-                if list_s.index(w)+i > len(list_s):
-                    break
-                else:
-                    text2 = s[list_s.index(w):list_s.index(w)+i]
-                    if text2 in some_list:
-                        consonants_score.append(text2)
-    
-print(consonants_score)
-print(len(consonants_score))
-
+for i in range(0,len(list_s)+1):
+    for k in range(1,len(list_s)+1):
+        if i+k<=len(list_s):
+            text_n = s[i:i+k]
+            if text_n in some_list:
+                another_list.append(text_n)
+        else: continue
+            
+result = len(another_list)
         
 
